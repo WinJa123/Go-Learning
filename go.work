@@ -1,0 +1,6 @@
+go 1.26.2
+
+use (
+	"./1_Learning/Step 7/7.6 Practice"
+	"./1_Learning/Step 8/8.6 Practice"
+)

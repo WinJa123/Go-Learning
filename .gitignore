@@ -6,7 +6,7 @@
 *.dylib
 __debug_bin
 bin/
-
+Test Tasks/
 # Временный мусор редактора
 .vscode/
 *.log
