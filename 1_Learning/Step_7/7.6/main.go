@@ -41,28 +41,25 @@ func getInput() (string, error) {
 
 func CountCharacters(text string) (letters, digits, spaces, punctuation int) {
 	letters = utf8.RuneCountInString(text)
-	digits = 0 // ДОДЕЛАТЬ
-	spaces = 0
-	punctuation = 0
-	for _, searchDigits := range text {
-		strDig := string(searchDigits)
+	for _, char := range text {
+		strDig := string(char)
 		if _, err := strconv.Atoi(strDig); err != nil {
 			continue
 		}
 		digits++
 		letters--
 	}
-	for _, searchSpace := range text {
-		if searchSpace == ' ' {
+	for _, char := range text {
+		if char == ' ' {
 			spaces++
 			letters--
 		}
 	}
-	for _, searchPunctuation := range text {
-		if searchPunctuation == '.' ||
-			searchPunctuation == ',' ||
-			searchPunctuation == '?' ||
-			searchPunctuation == '!' {
+	for _, char := range text {
+		if char == '.' ||
+			char == ',' ||
+			char == '?' ||
+			char == '!' {
 			punctuation++
 			letters--
 		}
@@ -71,10 +68,10 @@ func CountCharacters(text string) (letters, digits, spaces, punctuation int) {
 }
 
 func DisplayResults(letters, digits, spaces, punctuation int) {
-	fmt.Println("Количество букв:", letters)
-	fmt.Println("Количество цифр:", digits)
-	fmt.Println("Количество пробелов:", spaces)
-	fmt.Println("Количество знаков препинания:", punctuation)
+	fmt.Printf("Количество букв: %d\n", letters)
+	fmt.Printf("Количество цифр: %d\n", digits)
+	fmt.Printf("Количество пробелов: %d\n", spaces)
+	fmt.Printf("Количество знаков препинания: %d\n", punctuation)
 }
 
 func clearCmd() {
