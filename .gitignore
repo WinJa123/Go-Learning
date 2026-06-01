@@ -1,0 +1,13 @@
+# Бинарники Go (результат go build)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+__debug_bin
+bin/
+
+# Временный мусор редактора
+.vscode/
+*.log
+tempCodeRunnerFile.go
